@@ -162,7 +162,7 @@ h2 {
 @media (max-width: 768px) {
     nav ul {
         flex-direction: row;
-        gap: 4px;
+        gap: 3px;
         padding-inline-start: 20px;
     }
     nav ul li a {
