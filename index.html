@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajeet's Website</title>
+    <link rel="stylesheet" href="style/styless.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="assets/ar.png" alt="Security Icon" class="icon" style="border-radius: 10px;">
+            <h1>Welcome to Ajeet's Website </h1>
+            <p>Click the button to go to the main website</p>
+            <button onclick="playGreeting();  goToPage();">Main website</button>
+            <p class="footer-text">Created by Ajeet Rawat </p>
+        </div>
+
+    </div>
+    <div id="customAlert" class="alert-box">
+        <p>Hello Fello coders!Welcome to Master Ajeet's Website,Thankyou for Visiting 
+            
+        </p>
+        <button onclick="closeAlert()">Hii</button>
+    </div>
+
+    <script>
+        function playGreeting() {
+            // Create an audio element
+            const audio = new Audio("assets/wel1.mp3");
+
+            // Play the audio
+            audio.play().then(() => {
+                document.getElementById('customAlert').style.display = 'block';
+              // Show alert while audio plays
+            }).catch(error => {
+                console.log("Error playing audio:", error);
+            });
+        }
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+        function goToPage() {
+            setTimeout(function () {
+                window.location.href = "home.html"; // Redirect after 7 seconds
+            }, 7000);
+        }
+    </script>
+</body>
+
+</html>
