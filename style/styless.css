@@ -85,7 +85,7 @@ button:hover {
 }
 @media (max-width: 768px) {
     .alert-box {
-        min-width:350;
+        max-width:350;
     }
 }
 
