@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajeet's Website</title>
+    <link rel="stylesheet" href="style/styless.css">
+</head>
+
+<body>
+    <main>
+    <div class="container">
+        <div class="card">
+            <img src="assets/ar.png" alt="Security Icon" class="icon" style="border-radius: 10px;">
+            <h1>Welcome to Ajeet's Website </h1>
+            <p>Click the button to go to the main website</p>
+            <button onclick="toggleLogin()">Go to Login</button>
+            <p class="footer-text">Created by Ajeet Rawat </p>
+        </div>
+
+    </div>
+    <div id="customAlert" class="alert-box">
+        <p>Hello Fello coders!Welcome to Master Ajeet's Website,<br>Thankyou for Visiting 
+            
+        </p>
+        <button onclick="closeAlert()">Hii</button>
+    </div></main>
+<section id="login" class="login">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="javascript:playGreeting();  goToPage();" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required oninput="toggleLoginButton()">
+            </div><br>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required oninput="toggleLoginButton()">
+            </div><br>
+            <button id="login-button"   disabled  onclick="toggleLogin();playGreeting();  goToPage();">Login</button>
+        </form>
+</section>
+    <script>
+        function toggleLogin() {
+            const form = document.getElementById('login');
+            form.classList.toggle('show');
+          }
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function playGreeting() {
+            // Create an audio element
+            const audio = new Audio("assets/wel1.mp3");
+
+            // Play the audio
+            audio.play().then(() => {
+                document.getElementById('customAlert').style.display = 'block';
+              // Show alert while audio plays
+            }).catch(error => {
+                console.log("Error playing audio:", error);
+            });
+        }
+        function toggleLoginButton() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginButton = document.getElementById('login-button');
+            
+            if (username && password) {
+                loginButton.removeAttribute('disabled');
+            } else {
+                loginButton.setAttribute('disabled', 'true');
+            }
+        }
+        function closeAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+        function goToPage() {
+            setTimeout(function () {
+                window.location.href = "home.html"; // Redirect after 7 seconds
+            }, 7000);
+        }
+    </script>
+</body>
+
+</html>
